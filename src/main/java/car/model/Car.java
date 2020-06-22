@@ -158,7 +158,7 @@ public class Car {
     }
 
     public void addWheels(int wheelsNumber) {
-        for (int i = 0; i <= wheelsNumber; i++) {
+        for (int i = 0; i < wheelsNumber; i++) {
             carWheels.add(new CarWheel(1));
         }
     }
