@@ -1,10 +1,11 @@
 package car.tests;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import car.exception.IllegalValueException;
 import car.model.CarWheel;
 import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CarWheelTest {
     CarWheel wheel = new CarWheel(1.0);
