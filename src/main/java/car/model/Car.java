@@ -16,7 +16,7 @@ public class Car {
     private ArrayList<CarWheel> carWheels;
     private ArrayList<CarDoor> carDoors;
 
-    private Car (CarBuilder carBuilder) {
+    private Car(CarBuilder carBuilder) {
         this.dateCreated = carBuilder.dateCreated;
         this.maxSpeed = carBuilder.maxSpeed;
         this.accelerateSpeed = carBuilder.accelerateSpeed;
@@ -78,12 +78,12 @@ public class Car {
             return this;
         }
 
-        public CarBuilder setCarWheels(ArrayList<CarWheel>  carWheels) {
+        public CarBuilder setCarWheels(ArrayList<CarWheel> carWheels) {
             this.carWheels = carWheels;
             return this;
         }
 
-        public CarBuilder setCarDoors(ArrayList<CarDoor>  carDoors) {
+        public CarBuilder setCarDoors(ArrayList<CarDoor> carDoors) {
             this.carDoors = carDoors;
             return this;
         }
@@ -165,10 +165,10 @@ public class Car {
 
     public double getMaxCurrentSpeed() {
         double worseWheelCondition = carWheels.get(0).getWheelCondition();
-        for (CarWheel carWheel : carWheels){
+        for (CarWheel carWheel : carWheels) {
             worseWheelCondition = Math.min(worseWheelCondition, carWheel.getWheelCondition());
         }
-        return passengers > 0 ?  maxSpeed * worseWheelCondition : 0;
+        return passengers > 0 ? maxSpeed * worseWheelCondition : 0;
     }
 
     @Override

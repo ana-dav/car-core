@@ -21,8 +21,9 @@ public class CarWheel {
     }
 
     public void changeWheel(double wheelCondition) {
-        if (wheelCondition < 0.3)
+        if (wheelCondition < 0.3) {
             new CarWheel(1.0);
+        }
     }
 
     public void damageWheel(double damage) {
@@ -31,8 +32,8 @@ public class CarWheel {
 
     @Override
     public String toString() {
-        return "CarWheel{" +
-                "wheelCondition=" + wheelCondition +
-                '}';
+        return "CarWheel{"
+                + "wheelCondition=" + wheelCondition
+                + '}';
     }
 }

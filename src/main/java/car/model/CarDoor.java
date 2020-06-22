@@ -59,7 +59,6 @@ public class CarDoor {
         }
     }
 
-
     public void openWindow() {
         windowIsOpen = true;
     }
