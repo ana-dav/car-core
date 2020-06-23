@@ -3,19 +3,28 @@ package car.tests;
 import car.model.Car;
 import car.model.CarWheel;
 import java.util.ArrayList;
+import java.util.List;
 import junit.framework.Assert;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class CarTest {
-    ArrayList<CarWheel> wheels = new ArrayList<>();
-    Car car = new Car.CarBuilder(80)
-            .setPassengers((short) 2)
-            .setCurrentSpeed(65)
-            .setCarWheels(wheels)
-            .build();
+    private List<CarWheel> wheels;
+    private Car car;
+
+    @BeforeEach
+    void init() {
+        wheels = new ArrayList<>();
+        car = new Car.CarBuilder(80)
+                .setPassengers((short) 2)
+                .setCurrentSpeed(65)
+                .setCarWheels(wheels)
+                .build();
+    }
 
     @Test
     public void testPutInOnePassenger() {
+        init();
         car.putInOnePassenger();
         Assert.assertEquals(3, car.getPassengers());
     }

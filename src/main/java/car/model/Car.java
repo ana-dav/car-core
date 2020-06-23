@@ -4,6 +4,7 @@ import car.exception.IllegalValueException;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Car {
     private String dateCreated;
@@ -13,8 +14,8 @@ public class Car {
     private short passengersCapacity;
     private short passengers;
     private int currentSpeed;
-    private ArrayList<CarWheel> carWheels;
-    private ArrayList<CarDoor> carDoors;
+    private List<CarWheel> carWheels;
+    private List<CarDoor> carDoors;
 
     private Car(CarBuilder carBuilder) {
         this.dateCreated = carBuilder.dateCreated;
@@ -37,7 +38,7 @@ public class Car {
         private short passengersCapacity;
         private short passengers;
         private int currentSpeed;
-        private ArrayList<CarWheel> carWheels;
+        private List<CarWheel> carWheels;
         private ArrayList<CarDoor> carDoors;
 
         public CarBuilder(int maxSpeed) {
@@ -78,7 +79,7 @@ public class Car {
             return this;
         }
 
-        public CarBuilder setCarWheels(ArrayList<CarWheel> carWheels) {
+        public CarBuilder setCarWheels(List<CarWheel> carWheels) {
             this.carWheels = carWheels;
             return this;
         }
@@ -121,11 +122,11 @@ public class Car {
         return currentSpeed;
     }
 
-    public ArrayList<CarWheel> getCarWheels() {
+    public List<CarWheel> getCarWheels() {
         return carWheels;
     }
 
-    public ArrayList<CarDoor> getCarDoors() {
+    public List<CarDoor> getCarDoors() {
         return carDoors;
     }
 
@@ -164,7 +165,7 @@ public class Car {
     }
 
     public double getMaxCurrentSpeed() {
-        double worseWheelCondition = carWheels.get(0).getWheelCondition();
+        var worseWheelCondition = carWheels.get(0).getWheelCondition();
         for (CarWheel carWheel : carWheels) {
             worseWheelCondition = Math.min(worseWheelCondition, carWheel.getWheelCondition());
         }
