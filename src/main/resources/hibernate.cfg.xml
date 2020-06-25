@@ -11,5 +11,9 @@
         <property name="hibernate.connection.password">1111</property>
         <property name="hibernate.show_sql">true</property>
         <property name="hibernate.hbm2ddl.auto">create-drop</property>
+
+        <mapping class="car.model.Car" />
+        <mapping class="car.model.CarDoor" />
+        <mapping class="car.model.CarWheel" />
     </session-factory>
 </hibernate-configuration>
