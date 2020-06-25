@@ -5,8 +5,14 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.*;
 
+@Entity
 public class Car {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="ID", nullable=false, unique=true, length=11)
+    private Long id;
     private String dateCreated;
     private int maxSpeed;
     private int accelerateSpeed;
@@ -14,7 +20,9 @@ public class Car {
     private short passengersCapacity;
     private short passengers;
     private int currentSpeed;
+    @ManyToOne
     private List<CarWheel> carWheels;
+    @ManyToOne
     private List<CarDoor> carDoors;
 
     private Car(CarBuilder carBuilder) {
@@ -30,6 +38,7 @@ public class Car {
     }
 
     public static class CarBuilder {
+        private Long id;
         private LocalDateTime producedDate = LocalDateTime.now();
         String dateCreated = producedDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
         private int maxSpeed;
@@ -44,7 +53,13 @@ public class Car {
         public CarBuilder(int maxSpeed) {
             setDateCreated(dateCreated);
             this.maxSpeed = maxSpeed;
+            //this.id = id;
         }
+//
+//        private CarBuilder setId(Long id) {
+//            this.id = id;
+//            return this;
+//        }
 
         private CarBuilder setDateCreated(String dateCreated) {
             this.dateCreated = dateCreated;

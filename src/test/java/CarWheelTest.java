@@ -1,5 +1,3 @@
-package car.tests;
-
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import car.exception.IllegalValueException;

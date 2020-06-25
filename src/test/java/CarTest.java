@@ -1,5 +1,3 @@
-package car.tests;
-
 import car.model.Car;
 import car.model.CarWheel;
 import java.util.ArrayList;

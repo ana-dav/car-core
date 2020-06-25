@@ -1,8 +1,18 @@
 package car.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import car.exception.IllegalValueException;
 
+@Entity
 public class CarWheel {
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @Column(name="ID", nullable=false, unique=true, length=11)
+    private Long id;
     private double wheelCondition;
 
     public CarWheel(double wheelCondition) {
@@ -28,6 +38,14 @@ public class CarWheel {
 
     public void damageWheel(double damage) {
         wheelCondition -= damage;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override
