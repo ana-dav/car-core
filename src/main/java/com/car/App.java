@@ -1,7 +1,5 @@
 package com.car;
 
-import java.util.ArrayList;
-import java.util.List;
 import com.car.lib.Injector;
 import com.car.model.Car;
 import com.car.model.CarDoor;
@@ -9,6 +7,8 @@ import com.car.model.CarWheel;
 import com.car.service.CarDoorService;
 import com.car.service.CarService;
 import com.car.service.CarWheelService;
+import java.util.ArrayList;
+import java.util.List;
 
 public class App {
     private static final Injector INJECTOR = Injector.getInstance("com.car");

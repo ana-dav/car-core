@@ -1,7 +1,7 @@
 package com.car.dao.interfaces;
 
-import java.util.List;
 import com.car.model.Car;
+import java.util.List;
 
 public interface CarDao {
     Car add(Car car);

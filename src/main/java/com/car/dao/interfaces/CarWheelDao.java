@@ -1,7 +1,7 @@
 package com.car.dao.interfaces;
 
-import java.util.List;
 import com.car.model.CarWheel;
+import java.util.List;
 
 public interface CarWheelDao {
 
