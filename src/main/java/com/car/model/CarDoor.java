@@ -1,10 +1,24 @@
-package car.model;
+package com.car.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class CarDoor {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID", nullable = false, unique = true, length = 11)
+    private Long id;
     private String door;
     private String window;
     private boolean doorIsOpen;
     private boolean windowIsOpen;
+
+    public CarDoor() {
+    }
 
     public CarDoor(boolean doorIsOpen, boolean windowIsOpen) {
         this.doorIsOpen = doorIsOpen;
@@ -73,6 +87,14 @@ public class CarDoor {
         } else {
             openWindow();
         }
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     @Override

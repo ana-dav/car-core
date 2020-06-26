@@ -1,1 +1,1 @@
-# car-core
+# com.car-core
