@@ -1,18 +1,19 @@
-package car.dao.impl;
+package com.car.dao.impl;
 
+import com.car.dao.interfaces.CarDao;
+import com.car.lib.Dao;
+import com.car.model.Car;
+import com.car.util.HibernateUtil;
 import java.util.List;
 import javax.persistence.criteria.CriteriaQuery;
-import car.dao.interfaces.GenericDao;
-import car.lib.Dao;
-import car.model.Car;
-import car.model.CarDoor;
-import car.util.HibernateUtil;
+import lombok.extern.java.Log;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.jupiter.params.shadow.com.univocity.parsers.common.DataProcessingException;
 
+@Log
 @Dao
-public class CarDaoImpl implements GenericDao<Car> {
+public class CarDaoImpl implements CarDao {
     @Override
     public Car add(Car car) {
         Transaction transaction = null;

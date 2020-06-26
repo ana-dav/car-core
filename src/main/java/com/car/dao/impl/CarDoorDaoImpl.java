@@ -1,26 +1,29 @@
-package car.dao.impl;
+package com.car.dao.impl;
 
-import car.dao.interfaces.GenericDao;
-import car.model.CarWheel;
-import car.util.HibernateUtil;
+import com.car.dao.interfaces.CarDoorDao;
+import com.car.lib.Dao;
+import com.car.model.CarDoor;
+import com.car.util.HibernateUtil;
 import java.util.List;
 import javax.persistence.criteria.CriteriaQuery;
-import org.hibernate.HibernateException;
+import lombok.extern.java.Log;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.junit.jupiter.params.shadow.com.univocity.parsers.common.DataProcessingException;
 
-public class CarWheelDaoImpl implements GenericDao<CarWheel> {
+@Log
+@Dao
+public class CarDoorDaoImpl implements CarDoorDao {
     @Override
-    public CarWheel add(CarWheel carWheel) {
+    public CarDoor add(CarDoor carDoor) {
         Transaction transaction = null;
         Session session = null;
         try {
             session = HibernateUtil.getSessionFactory().openSession();
             transaction = session.beginTransaction();
-            session.save(carWheel);
+            session.save(carDoor);
             transaction.commit();
-            return carWheel;
+            return carDoor;
         } catch (Exception e) {
             if (transaction != null) {
                 transaction.rollback();
@@ -34,11 +37,11 @@ public class CarWheelDaoImpl implements GenericDao<CarWheel> {
     }
 
     @Override
-    public List<CarWheel> getAll() {
+    public List<CarDoor> getAll() {
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
-            CriteriaQuery<CarWheel> criteriaQuery = session
-                    .getCriteriaBuilder().createQuery(CarWheel.class);
-            criteriaQuery.from(CarWheel.class);
+            CriteriaQuery<CarDoor> criteriaQuery = session
+                    .getCriteriaBuilder().createQuery(CarDoor.class);
+            criteriaQuery.from(CarDoor.class);
             return session.createQuery(criteriaQuery).getResultList();
         } catch (Exception e) {
             throw new DataProcessingException("Error retrieving all cars ", e);

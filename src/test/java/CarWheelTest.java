@@ -1,7 +1,7 @@
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import car.exception.IllegalValueException;
-import car.model.CarWheel;
+import com.car.exception.IllegalValueException;
+import com.car.model.CarWheel;
 import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
 

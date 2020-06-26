@@ -1,4 +1,4 @@
-package car.exception;
+package com.car.exception;
 
 public class IllegalValueException extends RuntimeException {
     public IllegalValueException(String errorMessage) {

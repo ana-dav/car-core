@@ -1,5 +1,5 @@
-import car.model.Car;
-import car.model.CarWheel;
+import com.car.model.Car;
+import com.car.model.CarWheel;
 import java.util.ArrayList;
 import java.util.List;
 import junit.framework.Assert;

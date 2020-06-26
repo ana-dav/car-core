@@ -1,4 +1,4 @@
-import car.model.CarDoor;
+import com.car.model.CarDoor;
 import junit.framework.Assert;
 import org.junit.jupiter.api.Test;
 
